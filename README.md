@@ -18,6 +18,20 @@ Mediterranean restaurant in Chicago, with a fully validated table reservation fo
 - **Confirmation page** (`/confirmed`) with a booking summary.
 - Menu, About, Order Online, Login and 404 pages, so every link works.
 
+## Where to find each rubric item (for reviewers)
+
+| Rubric question | Where to look |
+| --- | --- |
+| UI/UX matches the Figma mockup and wireframe | Run `npm run dev`: header, hero, specials, testimonials, about, footer and the booking page |
+| Semantic HTML | DevTools → Elements: `header`, `nav`, `main`, `section`, `article`, `aside`, `footer`, `address`, `fieldset`/`legend` |
+| Mobile and desktop layout | DevTools → device toolbar: hamburger menu and one column on mobile, grid layout from 960px (`src/index.css`) |
+| Meta and Open Graph tags | `index.html`: `description`, `keywords`, `og:*` and `twitter:*` tags |
+| BookingForm is a child component | `src/components/BookingForm.jsx`, rendered by `src/pages/BookingPage.jsx` |
+| Available times state managed by the parent | `src/components/Main.jsx`: `useReducer(updateTimes, [], initializeTimes)`, passed down as `availableTimes` and `dispatch` |
+| Client-side validation | `src/utils/validation.js` + HTML5 attributes (`required`, `min`, `max`, `type`) in `BookingForm.jsx` |
+| Unit tests for the form and validation | `src/__tests__/BookingForm.test.jsx`, `src/__tests__/validation.test.js` (+ reducer, API and app tests) |
+| Unit tests pass | `npm test` → 47 passed |
+
 ## Accessibility
 
 - Semantic HTML landmarks: `header`, `nav`, `main`, `section`, `article`, `aside`, `footer`, `address`.

@@ -10,7 +10,12 @@ import AboutPage from '../pages/AboutPage';
 import PlaceholderPage from '../pages/PlaceholderPage';
 import NotFoundPage from '../pages/NotFoundPage';
 
-/** Main content area: owns booking state and defines the routes. */
+/**
+ * Main content area: defines the routes and owns the booking state.
+ * The available times are managed here with useReducer (parent of BookingPage
+ * -> BookingForm) and passed down as props together with `dispatch`, so the
+ * state survives navigation and BookingForm stays a presentational child.
+ */
 function Main() {
   const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
   const navigate = useNavigate();
