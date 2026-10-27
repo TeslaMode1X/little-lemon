@@ -52,7 +52,7 @@ Requirements: **Node.js 18+** and npm.
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-username>/little-lemon.git
+git clone https://github.com/TeslaMode1X/little-lemon.git
 cd little-lemon
 
 # 2. Install dependencies
